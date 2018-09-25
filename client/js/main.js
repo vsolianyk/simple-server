@@ -12,6 +12,7 @@
         };
         xhr.send();
     }
+    //https://dog.ceo/dog-api/documentation/breed
     function getUsers(callback) {
         var xhr = new XMLHttpRequest();
 
@@ -20,7 +21,7 @@
         xhr.onload = function () {
             callback(JSON.parse(xhr.response));
         };
-        xhr.send();
+        xhr.send(JSON.stringify({test: true}));
     }
 
     function saveUser(data, callback) {
