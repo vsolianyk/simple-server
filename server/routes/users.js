@@ -4,7 +4,7 @@ var router = express.Router();
 const users = [
   {
     "isActive": true,
-    "picture": "http://placehold.it/32x32",
+    "picture": "https://via.placeholder.com/50x50",
     "age": 28,
     "eyeColor": "green",
     "firstName": "Watson",
@@ -16,7 +16,7 @@ const users = [
   },
   {
     "isActive": true,
-    "picture": "http://placehold.it/32x32",
+    "picture": "https://via.placeholder.com/50x50",
     "age": 21,
     "eyeColor": "blue",
     "firstName": "Jacklyn",
@@ -28,7 +28,7 @@ const users = [
   },
   {
     "isActive": true,
-    "picture": "http://placehold.it/32x32",
+    "picture": "https://via.placeholder.com/50x50",
     "age": 23,
     "eyeColor": "green",
     "firstName": "Brianna",
@@ -40,7 +40,7 @@ const users = [
   },
   {
     "isActive": false,
-    "picture": "http://placehold.it/32x32",
+    "picture": "https://via.placeholder.com/50x50",
     "age": 37,
     "eyeColor": "green",
     "firstName": "Violet",
@@ -52,7 +52,7 @@ const users = [
   },
   {
     "isActive": false,
-    "picture": "http://placehold.it/32x32",
+    "picture": "https://via.placeholder.com/50x50",
     "age": 28,
     "eyeColor": "brown",
     "firstName": "Tyler",
@@ -64,7 +64,7 @@ const users = [
   },
   {
     "isActive": true,
-    "picture": "http://placehold.it/32x32",
+    "picture": "https://via.placeholder.com/50x50",
     "age": 34,
     "eyeColor": "blue",
     "firstName": "Ross",
@@ -76,7 +76,7 @@ const users = [
   },
   {
     "isActive": false,
-    "picture": "http://placehold.it/32x32",
+    "picture": "https://via.placeholder.com/50x50",
     "age": 36,
     "eyeColor": "brown",
     "firstName": "Britt",
@@ -88,7 +88,7 @@ const users = [
   },
   {
     "isActive": true,
-    "picture": "http://placehold.it/32x32",
+    "picture": "https://via.placeholder.com/50x50",
     "age": 23,
     "eyeColor": "green",
     "firstName": "Millicent",
@@ -100,7 +100,7 @@ const users = [
   },
   {
     "isActive": true,
-    "picture": "http://placehold.it/32x32",
+    "picture": "https://via.placeholder.com/50x50",
     "age": 27,
     "eyeColor": "green",
     "firstName": "Knox",
@@ -112,7 +112,7 @@ const users = [
   },
   {
     "isActive": false,
-    "picture": "http://placehold.it/32x32",
+    "picture": "https://via.placeholder.com/50x50",
     "age": 35,
     "eyeColor": "brown",
     "firstName": "Lucille",
@@ -124,7 +124,7 @@ const users = [
   },
   {
     "isActive": false,
-    "picture": "http://placehold.it/32x32",
+    "picture": "https://via.placeholder.com/50x50",
     "age": 37,
     "eyeColor": "green",
     "firstName": "Terry",
@@ -136,7 +136,7 @@ const users = [
   },
   {
     "isActive": false,
-    "picture": "http://placehold.it/32x32",
+    "picture": "https://via.placeholder.com/50x50",
     "age": 23,
     "eyeColor": "blue",
     "firstName": "Claudette",
@@ -148,7 +148,7 @@ const users = [
   },
   {
     "isActive": false,
-    "picture": "http://placehold.it/32x32",
+    "picture": "https://via.placeholder.com/50x50",
     "age": 40,
     "eyeColor": "green",
     "firstName": "Rhonda",
@@ -160,7 +160,7 @@ const users = [
   },
   {
     "isActive": false,
-    "picture": "http://placehold.it/32x32",
+    "picture": "https://via.placeholder.com/50x50",
     "age": 21,
     "eyeColor": "blue",
     "firstName": "Lane",
@@ -172,7 +172,7 @@ const users = [
   },
   {
     "isActive": true,
-    "picture": "http://placehold.it/32x32",
+    "picture": "https://via.placeholder.com/50x50",
     "age": 22,
     "eyeColor": "brown",
     "firstName": "Durham",
@@ -184,7 +184,7 @@ const users = [
   },
   {
     "isActive": false,
-    "picture": "http://placehold.it/32x32",
+    "picture": "https://via.placeholder.com/50x50",
     "age": 30,
     "eyeColor": "brown",
     "firstName": "Essie",
@@ -196,7 +196,7 @@ const users = [
   },
   {
     "isActive": true,
-    "picture": "http://placehold.it/32x32",
+    "picture": "https://via.placeholder.com/50x50",
     "age": 29,
     "eyeColor": "green",
     "firstName": "Meredith",
@@ -208,7 +208,7 @@ const users = [
   },
   {
     "isActive": true,
-    "picture": "http://placehold.it/32x32",
+    "picture": "https://via.placeholder.com/50x50",
     "age": 36,
     "eyeColor": "green",
     "firstName": "Schultz",
@@ -220,7 +220,7 @@ const users = [
   },
   {
     "isActive": true,
-    "picture": "http://placehold.it/32x32",
+    "picture": "https://via.placeholder.com/50x50",
     "age": 24,
     "eyeColor": "blue",
     "firstName": "Small",
@@ -232,7 +232,7 @@ const users = [
   },
   {
     "isActive": false,
-    "picture": "http://placehold.it/32x32",
+    "picture": "https://via.placeholder.com/50x50",
     "age": 25,
     "eyeColor": "blue",
     "firstName": "Lambert",
@@ -244,7 +244,7 @@ const users = [
   },
   {
     "isActive": true,
-    "picture": "http://placehold.it/32x32",
+    "picture": "https://via.placeholder.com/50x50",
     "age": 36,
     "eyeColor": "brown",
     "firstName": "Flores",
@@ -256,7 +256,7 @@ const users = [
   },
   {
     "isActive": false,
-    "picture": "http://placehold.it/32x32",
+    "picture": "https://via.placeholder.com/50x50",
     "age": 21,
     "eyeColor": "blue",
     "firstName": "Amie",
@@ -268,7 +268,7 @@ const users = [
   },
   {
     "isActive": false,
-    "picture": "http://placehold.it/32x32",
+    "picture": "https://via.placeholder.com/50x50",
     "age": 35,
     "eyeColor": "brown",
     "firstName": "Nicole",
@@ -280,7 +280,7 @@ const users = [
   },
   {
     "isActive": true,
-    "picture": "http://placehold.it/32x32",
+    "picture": "https://via.placeholder.com/50x50",
     "age": 35,
     "eyeColor": "green",
     "firstName": "Bryant",
@@ -292,7 +292,7 @@ const users = [
   },
   {
     "isActive": true,
-    "picture": "http://placehold.it/32x32",
+    "picture": "https://via.placeholder.com/50x50",
     "age": 30,
     "eyeColor": "blue",
     "firstName": "Calhoun",
@@ -304,7 +304,7 @@ const users = [
   },
   {
     "isActive": false,
-    "picture": "http://placehold.it/32x32",
+    "picture": "https://via.placeholder.com/50x50",
     "age": 21,
     "eyeColor": "brown",
     "firstName": "Hayden",
@@ -316,7 +316,7 @@ const users = [
   },
   {
     "isActive": true,
-    "picture": "http://placehold.it/32x32",
+    "picture": "https://via.placeholder.com/50x50",
     "age": 29,
     "eyeColor": "brown",
     "firstName": "Mccall",
@@ -328,7 +328,7 @@ const users = [
   },
   {
     "isActive": true,
-    "picture": "http://placehold.it/32x32",
+    "picture": "https://via.placeholder.com/50x50",
     "age": 36,
     "eyeColor": "green",
     "firstName": "Clarice",
@@ -340,7 +340,7 @@ const users = [
   },
   {
     "isActive": true,
-    "picture": "http://placehold.it/32x32",
+    "picture": "https://via.placeholder.com/50x50",
     "age": 32,
     "eyeColor": "brown",
     "firstName": "Meyers",
@@ -352,7 +352,7 @@ const users = [
   },
   {
     "isActive": false,
-    "picture": "http://placehold.it/32x32",
+    "picture": "https://via.placeholder.com/50x50",
     "age": 37,
     "eyeColor": "blue",
     "firstName": "Macdonald",
@@ -364,14 +364,62 @@ const users = [
   }
 ];
 
+users.forEach(function(i, index) {
+  i.id = index + 1;
+});
+
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.json(users);
 });
 
+router.get('/:id', function(req, res, next) {
+  var user = users.find(function(i) {
+    return i.id === +req.params.id;
+  });
+  if (user) {
+    res.json(user);
+  } else {
+    res.status(404)
+      .send('Not found')
+  }
+});
+
 router.post('/', function(req, res, next) {
-  users.push(req.body);
-  res.send();
+  var user = Object.assign({
+    "isActive": true,
+    "picture": null,
+    "age": null,
+    "eyeColor": null,
+    "firstName": '',
+    "lastName": '',
+    "gender": null,
+    "company": '',
+    "email": '',
+    "phone": ''
+  }, req.body);
+
+  user.id = users[users.length - 1].id + 1;
+  users.push(user);
+  res.status(200).send(user);
+});
+
+router.put('/:id', function(req, res, next) {
+  var user = users.find(function(i) {
+    return i.id === +req.params.id;
+  });
+  var body = req.body;
+  if (user) {
+    for (var key in body) {
+      if(body[key] !== undefined) {
+        user[key] = body[key];
+      }
+    }
+    res.json(user);
+  } else {
+    res.status(404)
+      .send('Not found')
+  }
 });
 
 module.exports = router;

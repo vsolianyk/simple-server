@@ -9,35 +9,44 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/" tabindex="1">User manager</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="/user.html">Create user</a></li>
+            </ul>
+        </div><!-- /.container-fluid -->
+    </nav>
     <div class="container">
-        <div class="row">
-            <a href="/breeds.html">Breeds</a>
-        </div>
-        <div class="row">
-            <div id="img" class="col-xs-6 col-offset-xs-3"></div>
-        </div>
-        <div class="row">
-            <div class="col-sm-3">
-                <form>
-                    <div class="form-group">
-                        <label for="firstName">Name</label>
-                        <input type="text" class="form-control" id="firstName" placeholder="Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="lastName">Surname</label>
-                        <input type="text" class="form-control" id="lastName" placeholder="Surname">
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-primary">Save</button>
-                    </div>
-                </form>
-            </div>
-            <div class="col-sm-9">
-                <ul class="list-group" id="users-list"></ul>
-            </div>
-        </div>
+        <table class="table" id="users-table">
+            <thead>
+                <tr>
+                    <th>Photo</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Email</th>
+                    <th>Phone number</th>
+                    <th>Company</th>
+                    <th>Gender</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-center" colspan="7">
+                        <img src="img/spinner.gif" alt="Loading...">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
+    <script
+    src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

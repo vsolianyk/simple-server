@@ -1,69 +1,55 @@
 //https://codeinterview.io/XBCTEEDZHR
 
 (function() {
-
-    function getImage(callback) {
-        var xhr = new XMLHttpRequest();
-
-        xhr.open('GET', 'https://dog.ceo/api/breeds/image/random');
-        
-        xhr.onload = function () {
-            callback(JSON.parse(xhr.response));
-        };
-        xhr.send();
-    }
-    //https://dog.ceo/dog-api/documentation/breed
     function getUsers(callback) {
-        var xhr = new XMLHttpRequest();
-
-        xhr.open('GET', '/api/users');
-        
-        xhr.onload = function () {
-            callback(JSON.parse(xhr.response));
-        };
-        xhr.send(JSON.stringify({test: true}));
+        $.get({
+            method: 'GET',
+            url: '/api/users',
+            success: function (data) {
+                callback(data);
+            }
+        });
     }
 
-    function saveUser(data, callback) {
-        var xhr = new XMLHttpRequest();
-
-        xhr.open('POST', '/api/users');
-        
-        xhr.onload = function () {
-            callback();
-        };
-        xhr.setRequestHeader("Content-Type", "application/json");
-        xhr.send(JSON.stringify(data));
+    function capitalize(str) {
+        return str[0].toUpperCase() + str.slice(1);
     }
 
     function renderUsers(list) {
         var template = '';
-
         for(var i = 0; i < list.length; i++) {
-            template += '<li class="list-group-item">' + list[i].firstName +
-                ' ' + list[i].lastName + '</li>';
+            template += 
+                '<tr tabindex="' + i + 2 + '" data-id="'+list[i].id+'">' +
+                    '<td><img src="' + list[i].picture +'" alt="' + list[i].lastName +'" ></td>' +
+                    '<td>' + list[i].firstName + '</td>' +
+                    '<td>' + list[i].lastName + '</td>' +
+                    '<td>' + list[i].email + '</td>' +
+                    '<td>' + list[i].phone + '</td>' +
+                    '<td>' + list[i].company + '</td>' +
+                    '<td>' + capitalize(list[i].gender) + '</td>' +
+                '</tr>';
+                    
         }
 
-        document.getElementById('users-list').innerHTML = template;
+        $table.find('tbody').html(template);
     }
+
+    var $table = $('#users-table');
+
+    $table.on('click', function(e) {
+        var $tr = $(e.target).closest('tr');
+        window.location.href = '/user.html?id=' + $tr.data('id');
+    });
+
+    $table.on('keyup', function(e) {
+        if(e.keyCode !== 13) return;
+        var $tr = $(e.target);
+        if($tr[0].tagName !== 'tr') {
+            $tr = $tr.closest('tr');
+        }
+        window.location.href = '/user.html?id=' + $tr.data('id');
+    });
 
     getUsers(renderUsers);
 
-    getImage(function (data) {
-        document.getElementById('img').innerHTML =
-            '<img src="' + data.message +'" />';
-        console.log(data);
-    });
-
-    document.querySelector('form')
-        .addEventListener('submit', function(e) {
-            e.preventDefault();
-            var user = {
-                firstName: document.getElementById('firstName').value,
-                lastName: document.getElementById('lastName').value
-            };
-            saveUser(user, function () {
-                getUsers(renderUsers);
-            });
-        });
 })();
