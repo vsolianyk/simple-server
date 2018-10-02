@@ -1,0 +1,24 @@
+[
+    {
+        "question": "What is the capital of Great Britan?",
+        "type": "input"
+    },
+    {
+        "question": "What is the capital of USA?",
+        "type": "select",
+        "options": [
+            "New York",
+            "Boston",
+            "Washington"
+        ]
+    },
+    {
+        "question": "What is the capital of Canada?",
+        "type": "radio",
+        "options": [
+            "New York",
+            "Boston",
+            "Other"
+        ]
+    }
+]
