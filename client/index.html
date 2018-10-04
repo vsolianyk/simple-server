@@ -10,31 +10,14 @@
 </head>
 <body>
     <div class="container">
+        <div class="row"><h1 id="time" class="text-center col-xs-4 col-xs-offset-4">00:00:00</h1></div>
         <div class="row">
-            <div id="img" class="col-xs-6 col-offset-xs-3"></div>
-        </div>
-        <div class="row">
-            <div class="col-sm-3">
-                <form>
-                    <div class="form-group">
-                        <label for="firstName">Name</label>
-                        <input type="text" class="form-control" id="firstName" placeholder="Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="lastName">Surname</label>
-                        <input type="text" class="form-control" id="lastName" placeholder="Surname">
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-primary">Save</button>
-                    </div>
-                </form>
-            </div>
-            <div class="col-sm-9">
-                <ul class="list-group" id="users-list"></ul>
-            </div>
+            <div class="text-center col-xs-offset-3 col-xs-2"><button class="btn btn-success">Start</button></div>
+            <div class="text-center col-xs-2"><button class="btn btn-primary">Pause</button></div>
+            <div class="text-center col-xs-2"><button class="btn btn-danger">Reset</button></div>
         </div>
     </div>
 
-    <script src="js/main.js"></script>
+    <script data-main="js/main" src="requirejs/require.js"></script>
 </body>
 </html>

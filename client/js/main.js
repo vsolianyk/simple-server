@@ -1,69 +1,39 @@
-//https://codeinterview.io/XBCTEEDZHR
-
-(function() {
-
-    function getImage(callback) {
-        var xhr = new XMLHttpRequest();
-
-        xhr.open('GET', 'https://dog.ceo/api/breeds/image/random');
-        
-        xhr.onload = function () {
-            callback(JSON.parse(xhr.response));
-        };
-        xhr.send();
-    }
-    //https://dog.ceo/dog-api/documentation/breed
-    function getUsers(callback) {
-        var xhr = new XMLHttpRequest();
-
-        xhr.open('GET', '/api/users');
-        
-        xhr.onload = function () {
-            callback(JSON.parse(xhr.response));
-        };
-        xhr.send(JSON.stringify({test: true}));
-    }
-
-    function saveUser(data, callback) {
-        var xhr = new XMLHttpRequest();
-
-        xhr.open('POST', '/api/users');
-        
-        xhr.onload = function () {
-            callback();
-        };
-        xhr.setRequestHeader("Content-Type", "application/json");
-        xhr.send(JSON.stringify(data));
-    }
-
-    function renderUsers(list) {
-        var template = '';
-
-        for(var i = 0; i < list.length; i++) {
-            template += '<li class="list-group-item">' + list[i].firstName +
-                ' ' + list[i].lastName + '</li>';
+requirejs.config({
+    paths:{
+        'jquery': 'https://code.jquery.com/jquery-2.2.4.min'
+    },
+    shim: {
+        'jquery': {
+            exports: 'jQuery',
         }
+    }
+});
 
-        document.getElementById('users-list').innerHTML = template;
+require(["timer", "jquery"], function(timer, $) {
+    var renderTimer;
+
+    function run() {
+
+        renderTimer = setInterval(function() {
+            $('#time').html(timer.getTime());
+        }, 1000);
     }
 
-    getUsers(renderUsers);
+    function stop() {
+        clearInterval(renderTimer);
+    }
 
-    getImage(function (data) {
-        document.getElementById('img').innerHTML =
-            '<img src="' + data.message +'" />';
-        console.log(data);
+    $('.btn-success').on('click', function() {
+        timer.start();
+        run();
     });
-
-    document.querySelector('form')
-        .addEventListener('submit', function(e) {
-            e.preventDefault();
-            var user = {
-                firstName: document.getElementById('firstName').value,
-                lastName: document.getElementById('lastName').value
-            };
-            saveUser(user, function () {
-                getUsers(renderUsers);
-            });
-        });
-})();
+    $('.btn-primary').on('click', function() {
+        timer.stop();
+        stop();
+    });
+    $('.btn-danger').on('click', function() {
+        timer.reset();
+        stop();
+        $('#time').html(timer.getTime());
+    });
+});
